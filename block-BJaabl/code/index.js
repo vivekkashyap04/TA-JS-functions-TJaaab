@@ -46,18 +46,23 @@ calc(20, 10, 'sub'); // 10
 calc(20, 10, 'mul'); // 200
 */
 function calc(numA,numB,operation){
-  switch(operation){
-    case  "add":
-      return numA + numB;
-    case  "sub":
-      return numA -numB;  
-    case "div":
-      return numA/numB;
-    case "mul":
-      return numA * numB; 
-    default:
-     alert("enter Valid Input") ;    
+  if(typeof numA === "number" && typeof numB === "number"){
+    switch(operation){
+      case  "add":
+        return numA + numB;
+      case  "sub":
+        return numA -numB;  
+      case "div":
+        return numA/numB;
+      case "mul":
+        return numA * numB; 
+      default:
+       alert("enter Valid Input") ;    
+    }
+  }else{
+    alert("Enter valid Input");
   }
+  
 }
 let msg =calc(10,20,"add");
 console.log(msg)
@@ -70,12 +75,12 @@ isLeapYear(2001); // false
 */
 function isLeapYear(number){
   if(number % 4 === 0){
-    return "true";
+    return true;
   }
-  else if(number % 100 == 0){
-    return "true";
-  }else if(number === 100){
-     return "false";
+  else if(number % 400 === 0){
+    return true;
+  }else if(number % 100 === 0){
+     return false;
   }else{
     return "false";
   }
