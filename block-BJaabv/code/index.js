@@ -8,7 +8,7 @@
   * [ ] Add an additional argument to the function that takes the conversion rate of human to dog years.
 */
 
-function calculateDogAge(age,humanage) {
+function calculateDogAge(age,humanage = 7) {
   // Your code goes here
      age = age * humanage;
      return `the dog year is ${age}`;
@@ -21,10 +21,10 @@ function calculateDogAge(age,humanage) {
   * [ ] Return the total number of movie you will watch.
 */
 
-function calculateMoviesToWatch(number) {
+function calculateMoviesToWatch(number,age) {
   // Your code goes here
-   let age = 5;
-    number = 4 * number *12 * age ;
+    const MAX_AGE = 80;
+    number = 4 * number *12 * (MAX_AGE -age) ;
     return number;
 }
 
@@ -37,7 +37,7 @@ function calculateMoviesToWatch(number) {
 function celsiusToFahrenheit(temp) {
   // Your code goes here
   let fahrenheit = 32 + (temp * 9/5);
-  return fahrenheit;
+  return `${temp}°F is ${fahrenheit}°C`;
 }
 
 /*
@@ -49,7 +49,7 @@ function celsiusToFahrenheit(temp) {
 function fahrenheitToCelsius(temp) {
   // Your code goes here
   let celsius = 5/9 * (32*temp - 32);
-  return celsius;
+  return `${temp}°F is ${celsius}°C`;
 }
 
 /*
@@ -62,7 +62,7 @@ function fahrenheitToCelsius(temp) {
 
 function pow(n,x) {
   // Your code goes here
-  if(n>=0){
+  if(n>0){
     return x ** n;
   }else{
     return "The number below 1 is not allowed";
@@ -115,7 +115,15 @@ function sumOfN(n) {
 /*
 7. 🎖Modify the previous program such that only multiples of 5 or 7 are considered in the sum, e.g. n = 20 (5,7,10,14,15,20) 71
 */
-
+function multiplesOfSum(n){
+  let value = 0;
+  for(i=1;i<=n;i++){
+    if(i % 5 === 0 || i % 7 === 0){
+        value += i;
+    }
+  }
+   return value;
+}
 // Your code goes here
 
 /*
